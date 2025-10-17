@@ -1,0 +1,43 @@
+<!doctype html> 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Todo • JS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app" role="main">
+    <header class="header">
+      <h1 class="title">To-Do</h1>
+      <p class="subtitle">Simple, fast, and local. Add tasks, mark done, reorder by drag & drop.</p>
+    </header>
+    <section class="create">
+      <form id="addForm" aria-label="Add task">
+        <label for="newTask" class="visually-hidden">New task</label>
+        <input id="newTask" name="newTask" autocomplete="off" placeholder="Add a new task and press Enter" />
+        <button type="submit" id="addBtn" aria-label="Add task">Add</button>
+      </form>
+    </section>
+    <section class="controls" aria-label="Controls">
+      <div class="filters" role="tablist" aria-label="Filter tasks">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="active" role="tab" aria-selected="false">Active</button>
+        <button class="filter-btn" data-filter="completed" role="tab" aria-selected="false">Completed</button>
+      </div>
+      <div class="right-controls">
+        <span id="count" aria-live="polite">0 items</span>
+        <button id="clearCompleted" title="Clear completed tasks">Clear completed</button>
+      </div>
+    </section>
+    <section class="list-wrap" aria-label="Tasks">
+      <ul id="taskList" class="task-list" aria-live="polite"></ul>
+      <p id="empty" class="empty">No tasks yet — add one above ✨</p>
+    </section>
+    <footer class="footer">
+      <small>Built with vanilla JavaScript — persists in your browser.</small>
+    </footer>
+  </main>
+  <script src="app.js" defer></script>
+</body>
+</html>
